@@ -52,11 +52,20 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.5);
         transition: all .4s .2s;
+
+        @include respond(tab-land){
+            display: inline-block;
+        }
     }
 
     &__left{
         width: 33.333333%;
         display: table-cell;
+        
+        @include respond(tab-land){
+            display: flex;
+            width: 50%;
+        }
     }
 
     &__right{
