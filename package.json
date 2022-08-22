@@ -6,12 +6,17 @@
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
-    "concat:css": "concat -o css/main.concat.css css/iconfonts.css css/main.comp.css"
+    "concat:css": "concat -o css/main.concat.css css/iconfonts.css css/main.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/main.concat.css -o css/main.prefix.css",
+    "compress:css": "node-sass css/main.prefix.css css/main.css --output-style compressed"
   },
   "author": "Kevin",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.8",
     "concat": "^1.0.3",
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0"
   }
 }
